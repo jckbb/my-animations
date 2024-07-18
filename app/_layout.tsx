@@ -35,6 +35,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="fadeAwayScroll/index" />
+        <Stack.Screen name="arcCarousel/index" />
       </Stack>
     </ThemeProvider>
   );

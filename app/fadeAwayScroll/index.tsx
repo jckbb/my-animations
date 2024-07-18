@@ -41,7 +41,10 @@ const FadeAwayScroll = () => {
   return (
     <View style={styles.parent}>
       <Image
-        style={StyleSheet.absoluteFillObject}
+        style={[
+          StyleSheet.absoluteFillObject,
+          { height: "100%", width: "100%" },
+        ]}
         source={BGIMAGE}
         blurRadius={50}
       />
