@@ -36,6 +36,7 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="fadeAwayScroll/index" />
         <Stack.Screen name="arcCarousel/index" />
+        <Stack.Screen name="stickyFooterScroll/index" />
       </Stack>
     </ThemeProvider>
   );
