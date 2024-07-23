@@ -1,5 +1,5 @@
 import { Animated, Text, View } from "react-native";
-import { InfoIcon, SendIcon } from "@/assets/icons";
+import { InfoIcon } from "@/assets/icons";
 import ShareButton from "../ShareButton";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -33,6 +33,7 @@ const Footer = ({ scrollY, topEdge }: Props) => {
         elevation: 5,
         transform: [
           {
+            // move interpolated position at topedge
             translateY: scrollY.interpolate({
               inputRange: [-1, 0, topEdge - 1, topEdge],
               outputRange: [0, 0, 0, -1],

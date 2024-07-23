@@ -21,6 +21,7 @@ const StickyFooterScroll = () => {
   const scrollY = useRef(new Animated.Value(0)).current;
   const [bottomActions, setBottomActions] =
     useState<LayoutChangeEvent["nativeEvent"]["layout"]>(null);
+  // y position of dummy bar within scrollview
   const topEdge =
     bottomActions?.y -
     screenHeight +
@@ -32,6 +33,7 @@ const StickyFooterScroll = () => {
     <SafeAreaView style={{ backgroundColor: "white" }}>
       <Animated.ScrollView
         showsVerticalScrollIndicator={false}
+        // track scrolling
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
           {
