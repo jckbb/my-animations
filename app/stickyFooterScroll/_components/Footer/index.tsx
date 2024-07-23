@@ -1,6 +1,6 @@
 import { Animated, Text, View } from "react-native";
 import { InfoIcon, SendIcon } from "@/assets/icons";
-import AnimatedCircleButton from "../CirlceButton";
+import ShareButton from "../ShareButton";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface Props {
@@ -54,9 +54,7 @@ const Footer = ({ scrollY, topEdge }: Props) => {
         >
           <Text>{"+"}</Text>
         </View>
-        <AnimatedCircleButton topEdge={topEdge} scrollY={scrollY}>
-          <SendIcon height={16} width={16} />
-        </AnimatedCircleButton>
+        <ShareButton topEdge={topEdge} scrollY={scrollY} />
       </View>
       <View
         style={{
