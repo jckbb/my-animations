@@ -49,8 +49,9 @@ const ShareButton = ({ scrollY, topEdge }: Props) => {
           transform: [
             {
               translateX: scrollY.interpolate({
-                inputRange: [-1, 0, topEdge - 10, topEdge],
+                inputRange: [-1, 0, topEdge - 1, topEdge],
                 outputRange: [0, 0, 16, 16],
+                extrapolate: "clamp",
               }),
             },
           ],
