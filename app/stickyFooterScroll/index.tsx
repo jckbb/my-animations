@@ -6,6 +6,7 @@ import {
   View,
   LayoutChangeEvent,
   SafeAreaView,
+  StyleSheet,
 } from "react-native";
 import { paragraphs } from "./_utils";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -16,21 +17,33 @@ const { height: screenHeight } = Dimensions.get("screen");
 
 export const GUIDE_HEIGHT = 50;
 
+const styles = StyleSheet.create({
+  dummyBlock: {
+    width: "100%",
+    height: 500,
+    backgroundColor: "#70a1ff",
+    borderRadius: 24,
+  },
+  parent: { backgroundColor: "white" },
+});
+
 const StickyFooterScroll = () => {
   const inset = useSafeAreaInsets();
   const scrollY = useRef(new Animated.Value(0)).current;
-  const [bottomActions, setBottomActions] =
-    useState<LayoutChangeEvent["nativeEvent"]["layout"]>(null);
+  const [bottomActions, setBottomActions] = useState<
+    LayoutChangeEvent["nativeEvent"]["layout"] | null
+  >(null);
   // y position of dummy bar within scrollview
   const topEdge =
+    bottomActions &&
     bottomActions?.y -
-    screenHeight +
-    bottomActions?.height +
-    inset?.bottom +
-    inset?.top;
+      screenHeight +
+      bottomActions?.height +
+      inset?.bottom +
+      inset?.top;
 
   return (
-    <SafeAreaView style={{ backgroundColor: "white" }}>
+    <SafeAreaView style={styles.parent}>
       <Animated.ScrollView
         showsVerticalScrollIndicator={false}
         // track scrolling
@@ -57,15 +70,7 @@ const StickyFooterScroll = () => {
             setBottomActions(e.nativeEvent.layout);
           }}
         />
-        <View
-          style={{
-            width: "100%",
-            height: 500,
-            backgroundColor: "#70a1ff",
-            borderRadius: 24,
-            marginTop: 16,
-          }}
-        />
+        <View style={styles.dummyBlock} />
         {paragraphs.map((item, index) => (
           <View key={index}>
             <Text>{item}</Text>
