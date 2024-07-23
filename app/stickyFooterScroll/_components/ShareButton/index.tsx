@@ -1,13 +1,13 @@
+import { SendIcon } from "@/assets/icons";
 import React from "react";
 import {
   TouchableWithoutFeedback,
   Animated,
-  View,
   StyleSheet,
+  View,
 } from "react-native";
 
 interface Props {
-  children: JSX.Element;
   scrollY: Animated.Value;
   topEdge: number;
 }
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const AnimatedCircleButton = ({ children, scrollY, topEdge }: Props) => {
+const ShareButton = ({ scrollY, topEdge }: Props) => {
   return (
     <Animated.View
       style={[
@@ -39,7 +39,8 @@ const AnimatedCircleButton = ({ children, scrollY, topEdge }: Props) => {
         {
           shadowOpacity: scrollY.interpolate({
             inputRange: [-1, 0, topEdge - 1, topEdge],
-            outputRange: [0, 0, 0.25, 0],
+            outputRange: [0, 0, 0, 0.25],
+            extrapolate: "clamp",
           }),
           opacity: scrollY.interpolate({
             inputRange: [-1, 0, topEdge - 1, topEdge],
@@ -57,10 +58,12 @@ const AnimatedCircleButton = ({ children, scrollY, topEdge }: Props) => {
       ]}
     >
       <TouchableWithoutFeedback>
-        <View>{children}</View>
+        <View>
+          <SendIcon height={16} width={16} />
+        </View>
       </TouchableWithoutFeedback>
     </Animated.View>
   );
 };
 
-export default AnimatedCircleButton;
+export default ShareButton;
