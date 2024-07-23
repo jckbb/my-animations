@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
 const routes = [
   { label: "FadeAwayScroll", routePath: "/fadeAwayScroll" },
   { label: "Arc Carousel", routePath: "/arcCarousel" },
+  { label: "Sticky Footer", routePath: "/stickyFooterScroll" },
 ];
 
 const Home = () => {
