@@ -12,3 +12,8 @@ This is a demonstration of all the animations i've learned as a React Native Dev
 | ------------- | ------------- | ------------- |
 | ![arcCarousel_ios](https://github.com/user-attachments/assets/6885857d-4922-4682-8096-0a7a88b3d56d) |
 
+# Sticky Footer
+| iOS  | Android | Web |
+| ------------- | ------------- | ------------- |
+| ![stickyfooter_ios](https://github.com/user-attachments/assets/6f5d6798-fbcd-4cec-80ec-c37bd23264d9) |
+
