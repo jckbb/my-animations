@@ -10,6 +10,7 @@ const DummyBar = ({ onLayout }: Props) => {
       style={{
         width: "100%",
         height: 50,
+        marginVertical: 16,
       }}
       onLayout={onLayout}
     />
