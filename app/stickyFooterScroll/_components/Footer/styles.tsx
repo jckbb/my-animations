@@ -11,13 +11,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   group: { flexDirection: "row" },
 });
